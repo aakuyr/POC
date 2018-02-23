@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[user]
+	name = dikshatndesai65[A[D[D[B[D[D[D[Dnt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5
+	email = dikshantdesai65@gmail.com
+[remote "origin"]
+	url = https://bitbucket.org/dikshantdesai65/bit_sample.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

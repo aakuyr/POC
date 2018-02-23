@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[user]
+	name = aakuyr
+	email = issacnewton.sai@gmail.com
+[remote "origin"]
+	url = https://github.com/aakuyr/POC.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

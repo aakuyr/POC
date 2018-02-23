@@ -1,0 +1,60 @@
+#!/bin/bash
+if [[ "$1" == "create" ]]; then
+ read -p "Enter your username" name;
+ read -p "Enter your repo-name" repo_name;
+ curl -u "$name" https://api.github.com/user/repos -d "{\"$name\":\"$repo_name\"}"
+fi
+if [[ "$1" == "init" ]]; then
+ git init .
+ read -p "Please enter username for first repo" user1
+ read -p "Please enter email for first repo" email1;
+ git config user.name "$user1";
+ git config user.email "$email1";
+ read -p "Please enter name of repo to commit to" repo1;
+ git remote add origin "$repo1";
+ mv .git/ .gitone/
+ git init .
+ read -p "Please enter username for second repo" user2
+ read -p "Please enter email for second repo" email2;
+ git config user.name "$user2";
+ git config user.email "$email2";
+ read -p "Please enter name of repo to commit to" repo2;
+ git remote add origin "$repo2";
+ mv .git/ .gittwo
+fi
+
+if [[ "$1" == "commit" ]]; then 
+ read -p "Please enter a message for commit" message;
+ git --git-dir .gitone commit -m "$message";
+ git --git-dir .gittwo commit -m "$message";
+fi
+
+if [[ "$1" == "add" ]]; then
+ git --git-dir .gitone add . ;
+ git --git-dir .gittwo add . ;
+fi
+
+if [[ "$1" == "push" ]]; then
+ git --git-dir .gitone push;
+ git --git-dir .gittwo push;
+fi
+
+
+if [[ "$1" == "pull" ]]; then
+ git --git-dir .gittwo pull;
+ git --git-dir .gitone push;
+fi
+
+if [[ "$1" == "branch" ]]; then
+ read -p "Enter the name of the repo" name;
+ git --git-dir .gitone branch $name;
+ git --git-dir .gittwo branch $name;
+fi
+
+if [[ "$1" == "checkout" ]]; then
+ read -p "Enter the name of the repo" name;
+ git --git-dir .gitone checkout $name;
+ git --git-dir .gittwo checkout $name;
+fi
+
+
