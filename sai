@@ -35,8 +35,9 @@ if [[ "$1" == "add" ]]; then
 fi
 
 if [[ "$1" == "push" ]]; then
- git --git-dir .gitone push;
- git --git-dir .gittwo push;
+ branch=`git --git-dir .gitone rev-parse --abbrev-ref HEAD`
+ git --git-dir .gitone push -u --set-upstream origin $branch;
+ git --git-dir .gittwo push -u --set-upstream origin $branch;
 fi
 
 
@@ -46,15 +47,13 @@ if [[ "$1" == "pull" ]]; then
 fi
 
 if [[ "$1" == "branch" ]]; then
- read -p "Enter the name of the repo" name;
- git --git-dir .gitone branch $name;
- git --git-dir .gittwo branch $name;
+ git --git-dir .gitone branch $2;
+ git --git-dir .gittwo branch $2;
 fi
 
 if [[ "$1" == "checkout" ]]; then
- read -p "Enter the name of the repo" name;
- git --git-dir .gitone checkout $name;
- git --git-dir .gittwo checkout $name;
+ git --git-dir .gitone checkout $2;
+ git --git-dir .gittwo checkout $2;
 fi
 
 

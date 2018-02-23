@@ -6,12 +6,9 @@
 	symlinks = false
 	ignorecase = true
 [user]
-	name = aakuyr
-	email = issacnewton.sai@gmail.com
+	name = dikshatndesai65
+	email = dikshantdesai65@gmail.com
 [remote "origin"]
-	url = https://github.com/aakuyr/POC.git
+	url = https://bitbucket.org/dikshantdesai65/bit_sample.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
-[http] 
-	proxy = http://165.225.104.34:9480
-[https] 
-	proxy = https://165.225.104.34:9480
+
